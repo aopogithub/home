@@ -1,7 +1,0 @@
-#!/bin/bash -xv
-sum=0
-for a in $@
-do
-	sum=$[$sum+$a]
-done
-echo $[$sum/$#]

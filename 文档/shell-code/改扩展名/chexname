@@ -1,5 +1,0 @@
-#!/bin/bash
-for a in $(find ./ -name "*.$1")
-do 
-	mv $a ${a%%.*}.$2
-done
