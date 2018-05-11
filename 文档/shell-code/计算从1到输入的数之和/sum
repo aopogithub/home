@@ -1,0 +1,12 @@
+#!/bin/bash
+read -p 'Please input an number:' num
+sum=0
+if [ "$num" == "" ];then
+	echo sum=1
+	exit 
+fi
+for ((a=1;a<=$num;a++))
+do
+	sum=$[$sum+$a]
+done
+echo "sum=$sum"

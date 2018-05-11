@@ -1,0 +1,10 @@
+#!/bin/bash
+read -p 'please input one charactor here:' chara
+case $chara in 
+[0-9]*)
+	echo num ;;
+[a-Z]*)
+	echo letter ;;
+*)
+	echo others ;;
+esac

@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "计算1到您输入的数字之和(默认为100)"
+read -p "请输入一个数字：" num
+sum=0
+i=0
+while [ $i -le ${num:-100} ]
+do
+	let sum+=i
+	let i++
+done
+echo $sum
