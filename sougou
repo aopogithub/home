@@ -9,7 +9,6 @@ Centos 安装搜狗输入法
 
 3.接下来去搜狗输入法Linux官网下载deb版本的，注意是32bit还是64bit：
 (64位)root目录下:
-wget http://download.ime.sogou.com/1399632797/sogou_pinyin_linux_1.0.0.0021_i386.deb?st=c9JzzzSmu--091HNbxHNIQ&e=1525871762&fn=sogou_pinyin_linux_1.0.0.0021_i386.deb 
 
 4.安装dpkg包，切换为root用户：
  yum -y install dpkg
