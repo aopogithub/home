@@ -1,0 +1,35 @@
+#!/bin/bash
+
+
+
+read -p "请输入您在本论坛的积分：" inter
+[ ! -z `echo $inter | awk '{print $2}'` ]&&echo "别闹，好好的"&&exit
+[ -z `echo $inter | sed 's#\.##g'` ]&&echo "别闹，好好的"&&exit
+[ ! -z  `echo $inter | sed 's#[0-9]##g' | sed 's#\.##g'` ] &&echo "别闹，好好的"&&exit
+#注释：（替换掉输入的东西 如果输入的是纯数字那么咱们执行下面， 如果输入的是特殊字符、或者字母、等等 直接退出）
+#      （ sed 是替换的意思）
+#       （  s#[0-9]##g   相当于我们学的 s/[0-9]//g  （把所有的数字替换成空白） s#\.##g (\.表示去掉.的特殊意思) 替换掉小数点）
+
+
+inter1=`echo "$inter*10" | bc`
+inter2=`echo "$inter1/10" |bc`
+
+
+if       [ $inter2 -gt 200 ];then
+      echo "你已圆寂，大爷的这又是什么鬼"
+      exit
+   elif  [ $inter2 -gt 100 ];then
+      echo "$inter 分，仙路尽头谁为峰，一见无始皆成空"
+   elif  [ $inter2 -gt 90  ];then
+      echo "$inter 分，斩我明道唯乱古, 太皇龙剑敌万夫"
+   elif  [ $inter2 -gt 80  ];then
+      echo "$inter 分，白衣神王惊艳久，盖世九幽傲骨风"
+   elif  [ $inter2 -gt 70  ];then
+      echo "$inter 分，狂猴斗战九天界, 不忠不义不死王"
+   elif  [ $inter2 -gt 60  ];then
+      echo "$inter 分，九尊九秘九道极，生命古树话道衍"
+   elif  [ $inter2 -gt 40  ];then
+      echo "$inter 分，红颜青丝怜紫月, 凡尘一叶遮天中"
+   else
+      echo "$inter 分，在牛的肖邦也弹不出哥的悲伤"
+fi
