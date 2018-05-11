@@ -1,0 +1,35 @@
+Centos 安装搜狗输入法
+
+1.如果本机已安装ibus，需要先卸载，需要root用户操作：
+ yum remove ibus
+
+2.接下来安装fcitx
+ yum -y  install fcitx fcitx-pinyin fcitx-configtool 
+ 装不上就先执行: yum -y install epel-release.noarch(红帽光盘自带的源)
+
+3.接下来去搜狗输入法Linux官网下载deb版本的，注意是32bit还是64bit：
+(64位)root目录下:
+wget http://download.ime.sogou.com/1399632797/sogou_pinyin_linux_1.0.0.0021_i386.deb?st=c9JzzzSmu--091HNbxHNIQ&e=1525871762&fn=sogou_pinyin_linux_1.0.0.0021_i386.deb 
+
+4.安装dpkg包，切换为root用户：
+ yum -y install dpkg
+ root目录下:
+ mkdir sougou
+ cd sougou
+ cp ../sogoupinyin_2.2.0.0108_amd64.deb ./
+ ar vx sogoupinyin_2.2.0.0108_amd64.deb    #执行本句命令后会有如下提示：
+ #x - debian-binary
+ #x - control.tar.gz
+ #x - data.tar.xz
+ tar -Jxvf data.tar.xz  -C /
+
+5.复制搜狗拼音的库，保持root用户：
+ cp /usr/lib/x86_64-linux-gnu/fcitx/fcitx-sogoupinyin.so  /usr/lib64/fcitx/
+
+6.执行如下命令后重启:
+ fcitx (杀死相关进程 pkill -9 ibus)
+ sogou-qimpanel (可能需要安装qtwebkit,gcc等: yum -y install libQtWebKit* opengcc) 
+
+7.请执行这条命令 gsettings set org.gnome.settings-daemon.plugins.keyboard active false
+
+8.重新运行sogou-qimpanel即可看到搜狗输入法的工具栏
