@@ -1,0 +1,8 @@
+初始化集群：kubeadm init --control-plane-endpoint=cluster-endpoint --pod-network-cidr 10.244.0.0/16
+需要
+
+安装网络插件flannel：kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+直接安装会失败，下载镜像后导入：https://github.com/coreos/flannel/releases   docker load < flanneld-v0.13.1-rc1-amd64.docker
+
+
+
