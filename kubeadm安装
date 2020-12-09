@@ -17,7 +17,12 @@ systemctl enable kubelet && systemctl start kubelet
 修改docker镜像源为ali加速源：
 cat <<EOF > /etc/docker/daemon.json
 {
-    "registry-mirrors": ["https://49vw7rfe.mirror.aliyuncs.com"]
+    "registry-mirrors": ["https://49vw7rfe.mirror.aliyuncs.com"],
+    "exec-opts": ["native.cgroupdriver=systemd"],
+    "log-driver": "json-file",
+    "log-opts": {
+      "max-size": "100m"
+    }
 }
 EOF
 -------------------------------------------------------------------------------------------------------------------------------------------
