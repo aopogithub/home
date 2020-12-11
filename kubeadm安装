@@ -53,3 +53,4 @@ https://github.com/kubernetes/dashboard/releases
 查看token ：kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}')
 ---------------------------------------------------------------------------------------------------------------------------------------------
 更新镜像：https://blog.csdn.net/lipangeng/article/details/105630432
+YAML：https://www.cnblogs.com/lgeng/p/11053063.html
