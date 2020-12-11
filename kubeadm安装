@@ -22,7 +22,7 @@ gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors
 EOF
 setenforce 0
 yum install -y kubelet kubeadm kubectl
-systemctl enable kubelet && systemctl start kubelet
+systemctl enable kubelet && ;systemctl start kubelet
 -------------------------------------------------------------------------------------------------------------------------------------------
 修改docker镜像源为ali加速源：
 cat <<EOF > /etc/docker/daemon.json
@@ -35,7 +35,7 @@ cat <<EOF > /etc/docker/daemon.json
     }
 }
 EOF
-systemctl daemon-reload && systemctl enable docker
+systemctl daemon-reload && systemctl restart docker ;systemctl enable docker
 -------------------------------------------------------------------------------------------------------------------------------------------
 系统要求：关闭firewalld、selinux  关闭交换分区 ， 主机名解析
 -------------------------------------------------------------------------------------------------------------------------------------------
