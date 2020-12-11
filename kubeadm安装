@@ -51,3 +51,5 @@ https://github.com/kubernetes/dashboard/releases
 访问dashboard ：https://192.168.42.128:30017 ---->  kubectl -n kubernetes-dashboard edit svc kubernetes-dashboard   修改type 为 NodePort
 创建管理员用户：https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
 查看token ：kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}')
+---------------------------------------------------------------------------------------------------------------------------------------------
+更新镜像：https://blog.csdn.net/lipangeng/article/details/105630432
