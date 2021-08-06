@@ -44,7 +44,7 @@ systemctl daemon-reload && systemctl restart docker ;systemctl enable docker
 初始化失败时，使用kubeadm reset
 -------------------------------------------------------------------------------------------------------------------------------------------
 安装网络插件flannel：kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
-直接安装会失败，需要下载镜像后导入：https://github.com/coreos/flannel/releases   docker load < flanneld-v0.13.1-rc1-amd64.docker
+若直接安装失败，需要下载镜像后导入：https://github.com/coreos/flannel/releases   docker load < flanneld-v0.13.1-rc1-amd64.docker
 -------------------------------------------------------------------------------------------------------------------------------------------
 dashboard 安装：
 https://github.com/kubernetes/dashboard/releases
