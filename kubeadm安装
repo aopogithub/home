@@ -22,7 +22,7 @@ gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors
 EOF
 setenforce 0
 yum install -y kubelet kubeadm kubectl
-systemctl enable kubelet && ;systemctl start kubelet
+systemctl enable kubelet && systemctl start kubelet
 -------------------------------------------------------------------------------------------------------------------------------------------
 修改docker镜像源为ali加速源：
 cat <<EOF > /etc/docker/daemon.json
