@@ -1,0 +1,5 @@
+[base-debuginfo]
+name=Qcloud-$releasever - Debuginfo
+baseurl=http://debuginfo.centos.org/$releasever/$basearch/
+gpgcheck=0
+enabled=1
