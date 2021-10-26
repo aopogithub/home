@@ -1,0 +1,4 @@
+https://packages.debian.org/search?keywords=linux-image-4.9
+https://packages.debian.org/stretch/amd64/linux-image-4.9.0-13-amd64-dbg/download
+包名：linux-image-4.9.0-12-amd64-dbg
+安装后vmlinux目录：/usr/lib/debug/boot
