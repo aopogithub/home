@@ -18,7 +18,7 @@ ctr images pull registry.aliyuncs.com/google_containers/$kube_scheduler_version
 ctr images pull registry.aliyuncs.com/google_containers/$kube_proxy_version
 ctr images pull registry.aliyuncs.com/google_containers/$pause_version
 ctr images pull registry.aliyuncs.com/google_containers/$etcd_version
-ctr images pull registry.aliyuncs.com/google_containers/coredns
+ctr images pull registry.aliyuncs.com/google_containers/coredns:latest
 
 
 ctr images tag registry.aliyuncs.com/google_containers/$kube_apiserver_version k8s.gcr.io/$kube_apiserver_version
