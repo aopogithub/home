@@ -14,3 +14,8 @@ wget --no-check-certificate -O NewReinstall.sh https://cdn.jsdelivr.net/gh/fcurr
 modprobe tcp_bbr
 echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
 echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
+
+带rpd桌面的ubuntu容器:
+danchitnis/xrdp:ubuntu-xfce
+docker pull docker.1ms.run/danielguerra/ubuntu-xrdp:20.04
+docker run -d --name desktop --hostname desktop --shm-size 1g -p 3389:3389 docke.1ms.run/danielguerra/ubuntu-xrdp:20.04
